@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		204F948A281882DC0059A372 /* BndyYlwSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = BndyYlwSolid.ttf; path = ../../../Downloads/bundy_yellow/BndyYlwSolid.ttf; sourceTree = "<group>"; };
+		204F948A281882DC0059A372 /* BndyYlwSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = BndyYlwSolid.ttf; path = /Users/cbouris3001/Documents/chiefKeefApp/chiefKeefApp/../../../Downloads/bundy_yellow/BndyYlwSolid.ttf; sourceTree = "<absolute>"; };
 		A2E5952E28133E6500EA8FD1 /* chiefKeefApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chiefKeefApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E5953128133E6500EA8FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2E5953328133E6500EA8FD1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
