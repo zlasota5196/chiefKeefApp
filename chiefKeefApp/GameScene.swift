@@ -13,9 +13,9 @@ class GameScene: SKScene {
     var player = SKSpriteNode()
     
     override func didMove(to view: SKView) {
-        player = self.childNode(withName: "greenGloGuy") as! SKSpriteNode
+        player = self.childNode(withName: "gloGuy") as! SKSpriteNode
         
         backgroundColor = SKColor.purple
-        
+    
     }
 }
