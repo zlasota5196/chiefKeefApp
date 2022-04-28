@@ -10,9 +10,10 @@ import GameplayKit
 
 class GameScene: SKScene {
     
- //checking
+ var player = SKSpriteNode()
     
     override func didMove(to view: SKView) {
+        let player = SKSpriteNode(imageNamed: "gloGuy")
         
     }
 }
