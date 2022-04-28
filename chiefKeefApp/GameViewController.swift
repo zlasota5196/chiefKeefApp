@@ -9,6 +9,15 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+class gameScene: SKScene {
+    var background = SKSpriteNode(imageNamed: "chiefKeef")
+
+    override func didMove(to view: SKView) {
+        background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        addChild(background)
+    }
+}
+
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
