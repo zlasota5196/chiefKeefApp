@@ -15,5 +15,7 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         player = self.childNode(withName: "greenGloGuy") as! SKSpriteNode
         
+        backgroundColor = SKColor.blue
+        
     }
 }
