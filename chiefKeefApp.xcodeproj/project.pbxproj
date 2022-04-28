@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		204F948B281882DC0059A372 /* BndyYlwSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 204F948A281882DC0059A372 /* BndyYlwSolid.ttf */; };
+		204F948B281882DC0059A372 /* BndyYlwSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 204F948A281882DC0059A372 /* BndyYlwSolid.ttf */; settings = {ASSET_TAGS = (BndyYlwSolid, ); }; };
 		A2E5953228133E6500EA8FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E5953128133E6500EA8FD1 /* AppDelegate.swift */; };
 		A2E5953428133E6500EA8FD1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A2E5953328133E6500EA8FD1 /* GameScene.sks */; };
 		A2E5953628133E6500EA8FD1 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A2E5953528133E6500EA8FD1 /* Actions.sks */; };
@@ -101,6 +101,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					BndyYlwSolid,
+				);
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
