@@ -16,6 +16,7 @@ class GameScene: SKScene {
         player = self.childNode(withName: "greenGloGuy") as! SKSpriteNode
         
         backgroundColor = SKColor.blue
-        
     }
+    
+    
 }
