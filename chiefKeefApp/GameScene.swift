@@ -10,10 +10,12 @@ import GameplayKit
 
 class GameScene: SKScene {
     
- var player = SKSpriteNode()
+    var player = SKSpriteNode()
     
     override func didMove(to view: SKView) {
-        let player = SKSpriteNode(imageNamed: "gloGuy")
+        player = self.childNode(withName: "greenGloGuy") as! SKSpriteNode
+        
+        backgroundColor = SKColor.purple
         
     }
 }
