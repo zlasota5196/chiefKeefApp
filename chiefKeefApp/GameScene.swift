@@ -30,6 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
               let touchedNode = atPoint(location)
               if touchedNode.name == "HelloButton" {
                    // Call the function here.
+                  //heyy
               }
          }
     }
