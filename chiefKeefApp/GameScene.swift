@@ -22,17 +22,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // var blockArray = ["block1","block2","block3","block4","block5","block6","block7","block8"]
    
         backgroundColor = SKColor.purple
-    
+        
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-         for touch in touches {
-              let location = touch.location(in: self)
-              let touchedNode = atPoint(location)
-              if touchedNode.name == "HelloButton" {
-                   // Call the function here.
-                  //heyy
-              }
-         }
+        for touch in touches {
+            player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
+        }
     }
     
     
