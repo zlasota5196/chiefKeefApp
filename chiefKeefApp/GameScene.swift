@@ -27,7 +27,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
-            player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 60.0))
+            player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
         }
     }
     
