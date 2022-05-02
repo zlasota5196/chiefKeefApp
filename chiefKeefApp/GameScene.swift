@@ -20,7 +20,7 @@ class GameScene: SKScene {
         player = self.childNode(withName: "gloGuy") as! SKSpriteNode
         
         // var blockArray = ["block1","block2","block3","block4","block5","block6","block7","block8"]
-        let recognizer =
+   
         backgroundColor = SKColor.purple
     
     }
