@@ -12,6 +12,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var player = SKSpriteNode()
     var label = SKLabelNode()
+    let bottom = CGPoint(x: -6.139, y: -5667.201)
     
     override func didMove(to view: SKView) {
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
@@ -21,7 +22,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player = self.childNode(withName: "gloGuy") as! SKSpriteNode
         label = self.childNode(withName: "label") as! SKLabelNode
         
-        // var blockArray = ["block1","block2","block3","block4","block5","block6","block7","block8"]
+        let topLeft = CGPoint(x: -frame.origin.x, y: frame.origin.y)
+        let topRight = CGPoint(x: frame.origin.x, y: frame.origin.y)
+        let top = SKNode()
+        top.name = "top"
+        top.physicsBody = SKPhysicsBody(edgeFrom: topLeft, to: topRight)
+        top.physicsBody?.contactTestBitMask = 1
+        addChild(top)
    
         backgroundColor = SKColor.purple
         
