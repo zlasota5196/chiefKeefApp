@@ -26,7 +26,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         top.physicsBody = SKPhysicsBody(edgeFrom: topLeft, to: topRight)
         top.physicsBody?.contactTestBitMask = 1
         addChild(top)
-   
+        func didBegin(_ contact: SKPhysicsContact){
+            
+            if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "gloGuy" {
+        }
+            
         backgroundColor = SKColor.purple
         
     }
@@ -37,5 +41,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    
+    }
 }
