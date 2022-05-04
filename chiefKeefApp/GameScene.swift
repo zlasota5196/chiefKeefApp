@@ -44,6 +44,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         if contact.bodyA.node?.name == "gloGuy" && contact.bodyB.node?.name == "top" {
             player.position = bottom
+            label.alpha = 1
         }
     }
     
