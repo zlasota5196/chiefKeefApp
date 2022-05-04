@@ -37,6 +37,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
         }
     }
+     
+    func didBegin(_ contact: SKPhysicsContact) {
+        if contact.bodyA.node?.name == "gloGuy" && contact.bodyB.node?.name == "top" {
+            player.position = bottom
+        }
+    }
     
     
 }
