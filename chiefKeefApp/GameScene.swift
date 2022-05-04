@@ -12,8 +12,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var player = SKSpriteNode()
     var label = SKLabelNode()
-    let bottom = CGPoint(x: -6.139, y: -5667.201)
-    
+    let bottom = CGPoint(x: -6.139, y: -566.201)
     override func didMove(to view: SKView) {
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         self.physicsBody = border
