@@ -28,7 +28,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(top)
         func didBegin(_ contact: SKPhysicsContact){
             
-            if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "gloGuy" {
+           // if contact.top.node?.name == "top" && contact.player.node?.name == "gloGuy" {
         }
             
         backgroundColor = SKColor.purple
