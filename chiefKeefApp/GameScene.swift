@@ -20,18 +20,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player = self.childNode(withName: "gloGuy") as! SKSpriteNode
         label = self.childNode(withName: "label") as! SKLabelNode
-        
-        let topLeft = CGPoint(x: -frame.origin.x, y: frame.origin.y)
-        let topRight = CGPoint(x: frame.origin.x, y: frame.origin.y)
+//        print(frame.origin.y)
+        let topLeft = CGPoint(x: frame.origin.x, y: -frame.origin.y)
+        let topRight = CGPoint(x: -frame.origin.x, y: -frame.origin.y)
         let top = SKNode()
         top.name = "top"
         top.physicsBody = SKPhysicsBody(edgeFrom: topLeft, to: topRight)
         top.physicsBody?.contactTestBitMask = 1
         addChild(top)
-        func didBegin(_ contact: SKPhysicsContact){
-            
-           // if contact.top.node?.name == "top" && contact.player.node?.name == "gloGuy" {
-        }
+    
             
         backgroundColor = SKColor.purple
         
@@ -46,6 +43,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
      
     func didBegin(_ contact: SKPhysicsContact) {
+       print(contact.bodyA.node?.name)
         if contact.bodyA.node?.name == "gloGuy" && contact.bodyB.node?.name == "top" {
             player.position = bottom
             label.alpha = 1
@@ -53,4 +51,4 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     }
-}
+
