@@ -39,17 +39,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for touch in touches {
             player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
             label.alpha = 0
-            
         }
     }
+
      
     func didBegin(_ contact: SKPhysicsContact) {
        print(contact.bodyA.node?.name)
-        if contact.bodyA.node?.name == "gloGuy" && contact.bodyB.node?.name == "top" {
+        if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "player" {
             player.position = bottom
             label.alpha = 1
         }
-    }
     
     }
+
+ }
+
 
