@@ -31,9 +31,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         top.physicsBody = SKPhysicsBody(edgeFrom: topLeft, to: topRight)
         top.physicsBody?.contactTestBitMask = 1
         addChild(top)
-    
-            
         backgroundColor = SKColor.purple
+        print(frame.origin.y)
+        var sound = SKAction.playSoundFileNamed("sound", waitForCompletion: false)
+
+      
+
+        
+        
         
     }
     
@@ -41,13 +46,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for touch in touches {
             player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
             label.alpha = 0
-            
         }
     }
+
      
     func didBegin(_ contact: SKPhysicsContact) {
        print(contact.bodyA.node?.name)
-        if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "gloGuy" {
+        if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "player" {
             player.position = bottom
             label.alpha = 1
             self.ComputerColorChoice = ColorChoices.randomElement()!
@@ -63,7 +68,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 backgroundColor = SKColor.brown
             }
         }
-    }
     
     }
 
+    }
+    
+    func playSound(Sound :SKAction ){
+        run(sound)
+    }
+}

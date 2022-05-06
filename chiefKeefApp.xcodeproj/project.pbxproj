@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20C060B12825A97D00B50D8E /* Chief_Keef_-_Raw_Official_Instrume_(getmp3.pro).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C060B02825A97D00B50D8E /* Chief_Keef_-_Raw_Official_Instrume_(getmp3.pro).mp3 */; };
+		A28B23C52825B00E0008A2BA /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A28B23C42825B00E0008A2BA /* sound.mp3 */; };
 		A2E5953228133E6500EA8FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E5953128133E6500EA8FD1 /* AppDelegate.swift */; };
 		A2E5953428133E6500EA8FD1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A2E5953328133E6500EA8FD1 /* GameScene.sks */; };
 		A2E5953628133E6500EA8FD1 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A2E5953528133E6500EA8FD1 /* Actions.sks */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		20C060B02825A97D00B50D8E /* Chief_Keef_-_Raw_Official_Instrume_(getmp3.pro).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Chief_Keef_-_Raw_Official_Instrume_(getmp3.pro).mp3"; sourceTree = "<group>"; };
+		A28B23C42825B00E0008A2BA /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 		A2E5952E28133E6500EA8FD1 /* chiefKeefApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chiefKeefApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E5953128133E6500EA8FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2E5953328133E6500EA8FD1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 				A2E5953B28133E6500EA8FD1 /* Main.storyboard */,
 				A2E5953E28133E6800EA8FD1 /* Assets.xcassets */,
 				A2E5954028133E6800EA8FD1 /* LaunchScreen.storyboard */,
-				20C060B02825A97D00B50D8E /* Chief_Keef_-_Raw_Official_Instrume_(getmp3.pro).mp3 */,
+				A28B23C42825B00E0008A2BA /* sound.mp3 */,
 			);
 			path = chiefKeefApp;
 			sourceTree = "<group>";
@@ -137,9 +137,9 @@
 			files = (
 				A2E5953D28133E6500EA8FD1 /* Main.storyboard in Resources */,
 				A2E5953428133E6500EA8FD1 /* GameScene.sks in Resources */,
-				20C060B12825A97D00B50D8E /* Chief_Keef_-_Raw_Official_Instrume_(getmp3.pro).mp3 in Resources */,
 				A2E5953F28133E6800EA8FD1 /* Assets.xcassets in Resources */,
 				A2E5954228133E6800EA8FD1 /* LaunchScreen.storyboard in Resources */,
+				A28B23C52825B00E0008A2BA /* sound.mp3 in Resources */,
 				A2E5953628133E6500EA8FD1 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
