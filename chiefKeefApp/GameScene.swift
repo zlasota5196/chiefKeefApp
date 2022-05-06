@@ -29,9 +29,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         top.physicsBody = SKPhysicsBody(edgeFrom: topLeft, to: topRight)
         top.physicsBody?.contactTestBitMask = 1
         addChild(top)
-    
-            
         backgroundColor = SKColor.purple
+        print(frame.origin.y)
+        var sound = SKAction.playSoundFileNamed("sound", waitForCompletion: false)
+
+      
+
+        
+        
         
     }
     
@@ -49,7 +54,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.position = bottom
             label.alpha = 1
         }
+
     }
     
+    func playSound(Sound :SKAction ){
+        run(sound)
     }
-
+}
