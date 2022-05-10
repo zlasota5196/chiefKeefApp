@@ -14,6 +14,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player = SKSpriteNode()
     var label = SKLabelNode()
     let bottom = CGPoint(x: -6.139, y: -566.201)
+    let resetSize = CGSize(width: 165.877, height: 149.343)
     override func didMove(to view: SKView) {
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         self.physicsBody = border
@@ -45,10 +46,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
      
     func didBegin(_ contact: SKPhysicsContact) {
        print(contact.bodyA.node?.name)
-        if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "player" {
-            player.position = bottom
+        if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "gloGuy" {
+            player.removeFromParent()
             label.alpha = 1
             print("touched")
+            print(player.position)
+            
+            player = SKSpriteNode(imageNamed: "gloGuy")
+            player.position = bottom
+            player.size = resetSize
+            self.addChild(player)
         }
     
     }
