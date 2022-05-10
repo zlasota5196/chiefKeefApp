@@ -81,7 +81,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     }
     
-    func playSound(Sound :SKAction ){
-        run(sound)
-    }
-}
+ 
+
