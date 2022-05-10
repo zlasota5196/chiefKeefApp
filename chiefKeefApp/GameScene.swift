@@ -11,6 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    var ColorChoices = [0,1,2,3,4]
+    var ComputerColorChoice = 0
     var player = SKSpriteNode()
     var label = SKLabelNode()
     let bottom = CGPoint(x: -6.139, y: -566.201)
@@ -30,9 +32,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         top.physicsBody = SKPhysicsBody(edgeFrom: topLeft, to: topRight)
         top.physicsBody?.contactTestBitMask = 1
         addChild(top)
-    
-            
         backgroundColor = SKColor.purple
+        print(frame.origin.y)
+        var sound = SKAction.playSoundFileNamed("sound", waitForCompletion: false)
+
+      
+
+        
+        
         
     }
     
@@ -56,10 +63,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.position = bottom
             player.size = resetSize
             self.addChild(player)
+            self.ComputerColorChoice = ColorChoices.randomElement()!
+            if ComputerColorChoice == 0 {
+                backgroundColor = SKColor.orange
+            } else if ComputerColorChoice == 1 {
+                backgroundColor = SKColor.blue
+            } else if ComputerColorChoice == 2 {
+                backgroundColor = SKColor.green
+            } else if ComputerColorChoice == 3 {
+                backgroundColor = SKColor.yellow
+            } else if ComputerColorChoice == 4 {
+                backgroundColor = SKColor.brown
+            }
         }
     
     }
 
- }
-
-
+    }
+    
+    func playSound(Sound :SKAction ){
+        run(sound)
+    }
+}
