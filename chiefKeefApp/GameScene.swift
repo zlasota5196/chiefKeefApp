@@ -62,7 +62,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player = SKSpriteNode(imageNamed: "gloGuy")
             player.position = bottom
             player.size = resetSize
+            player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
             self.addChild(player)
+    
             self.ComputerColorChoice = ColorChoices.randomElement()!
             if ComputerColorChoice == 0 {
                 backgroundColor = SKColor.orange
@@ -81,7 +83,4 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     }
     
-    func playSound(Sound :SKAction ){
-        run(sound)
-    }
-}
+
