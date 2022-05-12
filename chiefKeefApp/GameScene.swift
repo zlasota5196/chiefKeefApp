@@ -32,7 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         self.physicsBody = border
         self.physicsWorld.contactDelegate = self
-        
+       
         player = self.childNode(withName: "gloGuy") as! SKSpriteNode
         label = self.childNode(withName: "label") as! SKLabelNode
 
@@ -92,8 +92,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     
+        if contact.player.categoryBitMask == middlePlatforms{
+            platformTouched(node:middleLeftPlatform)
+            
+        }
+        
+        else if contact.player.categoryBitMask == middlePlatforms{
+            platformTouched(node:middleLeftPlatform)
+            
+        }
+        
+        
     }
-
+    func platformTouched(node: SKSpriteNode){
+        removeFromParent()
+        removeAllActions()
+    }
+    
+    
+    
     }
     
  
