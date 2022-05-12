@@ -9,22 +9,33 @@
 import SpriteKit
 import GameplayKit
 
+let middlePlatforms: UInt32 = 1
+
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var ColorChoices = [0,1,2,3,4]
     var ComputerColorChoice = 0
     var player = SKSpriteNode()
     var label = SKLabelNode()
+    var middleLeftPlatform =  SKSpriteNode()
+    var middleRightPlatform = SKSpriteNode()
+    
+    
+    
     let bottom = CGPoint(x: -6.139, y: -566.201)
     let resetSize = CGSize(width: 165.877, height: 149.343)
+    
+    
+    
     override func didMove(to view: SKView) {
+        
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         self.physicsBody = border
         self.physicsWorld.contactDelegate = self
         
         player = self.childNode(withName: "gloGuy") as! SKSpriteNode
         label = self.childNode(withName: "label") as! SKLabelNode
-//        print(frame.origin.y)
+
         let topLeft = CGPoint(x: frame.origin.x, y: -frame.origin.y)
         let topRight = CGPoint(x: -frame.origin.x, y: -frame.origin.y)
         let top = SKNode()
@@ -34,10 +45,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(top)
         backgroundColor = SKColor.purple
         print(frame.origin.y)
-        var sound = SKAction.playSoundFileNamed("sound", waitForCompletion: false)
+        
 
-      
-
+        middleLeftPlatform.physicsBody?.categoryBitMask = middlePlatforms
+        middleRightPlatform.physicsBody?.categoryBitMask = middlePlatforms
+        
+        player.physicsBody?.categoryBitMask = middlePlatforms
         
         
         
