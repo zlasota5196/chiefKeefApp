@@ -35,6 +35,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
        
         player = self.childNode(withName: "gloGuy") as! SKSpriteNode
         label = self.childNode(withName: "label") as! SKLabelNode
+        middleLeftPlatform = self.childNode(withName: "middleLeftPlatform") as! SKSpriteNode
+        middleRightPlatform = self.childNode(withName: "middleRightPlatform") as! SKSpriteNode
 
         let topLeft = CGPoint(x: frame.origin.x, y: -frame.origin.y)
         let topRight = CGPoint(x: -frame.origin.x, y: -frame.origin.y)
@@ -65,7 +67,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
      
     func didBegin(_ contact: SKPhysicsContact) {
-       print(contact.bodyA.node?.name)
+       
         if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "gloGuy" {
             player.removeFromParent()
             label.alpha = 1
@@ -92,6 +94,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 backgroundColor = SKColor.brown
             }
         }
+        print("bodyA = \( contact.bodyA.node?.name)")
+        print("bodyB = \(contact.bodyB.node?.name)")
+        
+        if contact.bodyA.categoryBitMask == middlePlatforms{
+            platformTouched(node:middleRightPlatform)
+            
+        }
+        
+        else if contact.bodyA.categoryBitMask == middlePlatforms{
+            platformTouched(node:middleLeftPlatform)
+            
+        }
+        
+        
+    }
+    
+    func platformTouched(node: SKSpriteNode){
+        node.removeAllChildren()
+        node.removeFromParent()
+        
+    }
     
     
     
