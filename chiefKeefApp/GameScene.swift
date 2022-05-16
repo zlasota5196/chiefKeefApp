@@ -65,7 +65,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
      
     func didBegin(_ contact: SKPhysicsContact) {
-       print(contact.bodyA.node?.name)
+       
         if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "gloGuy" {
             player.removeFromParent()
             label.alpha = 1
@@ -92,21 +92,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     
-        if contact.player.categoryBitMask == middlePlatforms{
+        if contact.bodyA.categoryBitMask == middlePlatforms{
             platformTouched(node:middleLeftPlatform)
             
         }
         
-        else if contact.player.categoryBitMask == middlePlatforms{
+        else if contact.bodyA.categoryBitMask == middlePlatforms{
             platformTouched(node:middleLeftPlatform)
             
         }
         
         
     }
+    
     func platformTouched(node: SKSpriteNode){
-        removeFromParent()
-        removeAllActions()
+        node.removeAllChildren()
+        node.removeFromParent()
+        
     }
     
     
