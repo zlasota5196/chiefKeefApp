@@ -75,6 +75,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player = SKSpriteNode(imageNamed: "gloGuy")
             player.position = bottom
             player.size = resetSize
+            player.name = "gloGuy"
             player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
             self.addChild(player)
     
@@ -92,26 +93,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     
-        if contact.player.categoryBitMask == middlePlatforms{
-            platformTouched(node:middleLeftPlatform)
-            
-        }
-        
-        else if contact.player.categoryBitMask == middlePlatforms{
-            platformTouched(node:middleLeftPlatform)
-            
-        }
-        
-        
-    }
-    func platformTouched(node: SKSpriteNode){
-        removeFromParent()
-        removeAllActions()
-    }
-    
     
     
     }
     
  
-
+}
