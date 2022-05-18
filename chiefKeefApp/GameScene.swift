@@ -19,8 +19,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var label = SKLabelNode()
     var middleLeftPlatform =  SKSpriteNode()
     var middleRightPlatform = SKSpriteNode()
-    
-    
+    var number = 0
+    var scoreLabel = SKLabelNode()
     
     let bottom = CGPoint(x: -6.139, y: -566.201)
     let resetSize = CGSize(width: 165.877, height: 149.343)
@@ -71,6 +71,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "gloGuy" {
             player.removeFromParent()
             label.alpha = 1
+            number = number + 1
+            
             print("touched")
             print(player.position)
             
@@ -121,4 +123,4 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
  
-}
+
