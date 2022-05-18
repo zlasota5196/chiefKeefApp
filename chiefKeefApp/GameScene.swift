@@ -81,6 +81,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.size = resetSize
             player.name = "gloGuy"
             player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
+            player.physicsBody?.mass = 0.684169113636017
             self.addChild(player)
     
             self.ComputerColorChoice = ColorChoices.randomElement()!
@@ -95,7 +96,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             } else if ComputerColorChoice == 4 {
                 backgroundColor = SKColor.brown
             }
+       
         }
+
         print("bodyA = \( contact.bodyA.node?.name)")
         print("bodyB = \(contact.bodyB.node?.name)")
         
@@ -109,7 +112,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-        
     }
     
     func platformTouched(node: SKSpriteNode){
@@ -119,8 +121,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.size = resetSize
         player.name = "gloGuy"
         player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
+        player.physicsBody?.mass = 0.684169113636017
         self.addChild(player)
-        
+        label.alpha = 1
+        middleLeftPlatform.physicsBody?.categoryBitMask = middlePlatforms
+        middleRightPlatform.physicsBody?.categoryBitMask = middlePlatforms
+        player.physicsBody?.categoryBitMask = middlePlatforms
     }
     
     
