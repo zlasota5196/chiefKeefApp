@@ -113,8 +113,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func platformTouched(node: SKSpriteNode){
-        node.removeAllChildren()
-        node.removeFromParent()
+        player.removeFromParent()
+        player = SKSpriteNode(imageNamed: "gloGuy")
+        player.position = bottom
+        player.size = resetSize
+        player.name = "gloGuy"
+        player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
+        self.addChild(player)
         
     }
     
