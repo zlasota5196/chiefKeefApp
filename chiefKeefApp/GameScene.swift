@@ -71,7 +71,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
             label.alpha = 0
         }
-        UITapGestureRecognizer(target: <#T##Any?#>, action: <#T##Selector?#>)
         
     }
 
@@ -102,7 +101,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             } else if ComputerColorChoice == 2 {
                 backgroundColor = SKColor.green
             } else if ComputerColorChoice == 3 {
-                backgroundColor = SKColor.yellow
+                backgroundColor = SKColor.lightGray
             } else if ComputerColorChoice == 4 {
                 backgroundColor = SKColor.brown
             }
