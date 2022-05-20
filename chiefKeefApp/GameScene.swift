@@ -21,6 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var middleRightPlatform = SKSpriteNode()
     var number = 0
     var scoreLabel = SKLabelNode()
+ 
     
     let bottom = CGPoint(x: -6.139, y: -566.201)
     let resetSize = CGSize(width: 165.877, height: 149.343)
@@ -58,14 +59,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player.physicsBody?.categoryBitMask = middlePlatforms
         
-        var button: SKNode! = nil
-            button = SKSpriteNode(color: .red, size: CGSize(width: 100, height: 44))
-            button.position = CGPoint(x:278.561, y: 600.713);
-            self.addChild(button)
-        
-        
-        
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -74,7 +67,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
             label.alpha = 0
         }
-        UITapGestureRecognizer(target: <#T##Any?#>, action: <#T##Selector?#>)
+
+    
         
     }
 
