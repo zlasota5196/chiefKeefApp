@@ -54,6 +54,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player.physicsBody?.categoryBitMask = middlePlatforms
         
+        var button: SKNode! = nil
+            button = SKSpriteNode(color: .red, size: CGSize(width: 100, height: 44))
+            button.position = CGPoint(x:278.561, y: 600.713);
+            self.addChild(button)
+        
         
         
     }
