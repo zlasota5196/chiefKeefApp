@@ -104,7 +104,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             } else if ComputerColorChoice == 2 {
                 backgroundColor = SKColor.green
             } else if ComputerColorChoice == 3 {
-                backgroundColor = SKColor.yellow
+                backgroundColor = SKColor.lightGray
             } else if ComputerColorChoice == 4 {
                 backgroundColor = SKColor.brown
             }
