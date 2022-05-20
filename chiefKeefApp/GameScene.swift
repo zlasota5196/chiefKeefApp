@@ -141,7 +141,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         var button: SKNode! = nil
             button = SKSpriteNode(color: .red, size: CGSize(width: 100, height: 44))
-            button.position = CGPoint(x:278.561, y: 600.713);
+            button.position = CGPoint(x:219.122, y: 595.545);
             self.addChild(button)
         
             for touch in touches {
