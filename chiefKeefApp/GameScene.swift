@@ -75,6 +75,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
        
         if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "gloGuy" {
             player.removeFromParent()
+            label.text = "Tap to Start"
             label.alpha = 1
             number = number + 1
             scoreLabel.text = "\(number)"
@@ -132,6 +133,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody?.categoryBitMask = middlePlatforms
         player.physicsBody?.contactTestBitMask = 1
         self.addChild(player)
+        label.text = "Try Again"
         label.alpha = 1
         middleLeftPlatform.physicsBody?.categoryBitMask = middlePlatforms
         middleRightPlatform.physicsBody?.categoryBitMask = middlePlatforms
@@ -157,6 +159,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     player.physicsBody?.categoryBitMask = middlePlatforms
                     player.physicsBody?.contactTestBitMask = 1
                     self.addChild(player)
+                    label.text = "Tap to Start"
                     label.alpha = 1
 
                 }
