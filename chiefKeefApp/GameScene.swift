@@ -19,7 +19,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var label = SKLabelNode()
     var middleLeftPlatform =  SKSpriteNode()
     var middleRightPlatform = SKSpriteNode()
-    var number = 0
+    var number = 001
     var scoreLabel = SKLabelNode()
     
     let bottom = CGPoint(x: -6.139, y: -566.201)
@@ -66,8 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
-        for touch in touches {
+        for touch in touches{
             player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
             label.alpha = 0
         }
