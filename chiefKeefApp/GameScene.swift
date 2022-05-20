@@ -37,6 +37,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         label = self.childNode(withName: "label") as! SKLabelNode
         middleLeftPlatform = self.childNode(withName: "middleLeftPlatform") as! SKSpriteNode
         middleRightPlatform = self.childNode(withName: "middleRightPlatform") as! SKSpriteNode
+        scoreLabel = self.childNode(withName: "scoreLabel") as! SKLabelNode
 
         let topLeft = CGPoint(x: frame.origin.x, y: -frame.origin.y)
         let topRight = CGPoint(x: -frame.origin.x, y: -frame.origin.y)
@@ -65,10 +66,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
         for touch in touches {
             player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
             label.alpha = 0
         }
+      
     }
 
      
@@ -78,7 +81,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.removeFromParent()
             label.alpha = 1
             number = number + 1
-            
+            scoreLabel.text = "\(number)"
             print("touched")
             print(player.position)
             
