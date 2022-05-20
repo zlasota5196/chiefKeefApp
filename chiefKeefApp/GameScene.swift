@@ -24,7 +24,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let bottom = CGPoint(x: -6.139, y: -566.201)
     let resetSize = CGSize(width: 165.877, height: 149.343)
-    
+    let middleRightPos = CGPoint(x: 278.561, y: 42.714)
+    let middleRightSize = CGSize(width: 192.878, height: 29.429)
+    let middleLeftPos = CGPoint(x: -225.815, y: 41.475)
+    let middleLeftSize = CGSize(width: 298.369, height: 27.907)
     
     
     override func didMove(to view: SKView) {
@@ -63,6 +66,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
             label.alpha = 0
         }
+        UITapGestureRecognizer(target: <#T##Any?#>, action: <#T##Selector?#>)
+        
     }
 
      
