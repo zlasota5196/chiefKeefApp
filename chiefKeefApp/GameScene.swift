@@ -58,13 +58,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         middleRightPlatform.physicsBody?.categoryBitMask = middlePlatforms
         
         player.physicsBody?.categoryBitMask = middlePlatforms
-        
-       
-        
-       
-        
-        
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -94,6 +87,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.name = "gloGuy"
             player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
             player.physicsBody?.mass = 0.684169113636017
+            player.physicsBody?.categoryBitMask = middlePlatforms
+            player.physicsBody?.contactTestBitMask = 1
             self.addChild(player)
     
             self.ComputerColorChoice = ColorChoices.randomElement()!
@@ -134,6 +129,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.name = "gloGuy"
         player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
         player.physicsBody?.mass = 0.684169113636017
+        player.physicsBody?.categoryBitMask = middlePlatforms
+        player.physicsBody?.contactTestBitMask = 1
         self.addChild(player)
         label.alpha = 1
         middleLeftPlatform.physicsBody?.categoryBitMask = middlePlatforms
@@ -157,6 +154,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     player.name = "gloGuy"
                     player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
                     player.physicsBody?.mass = 0.684169113636017
+                    player.physicsBody?.categoryBitMask = middlePlatforms
+                    player.physicsBody?.contactTestBitMask = 1
                     self.addChild(player)
                     label.alpha = 1
 
