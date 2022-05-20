@@ -55,11 +55,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player.physicsBody?.categoryBitMask = middlePlatforms
         
-        var button: SKNode! = nil
-            button = SKSpriteNode(color: .red, size: CGSize(width: 100, height: 44))
-            button.position = CGPoint(x:278.561, y: 600.713);
-            self.addChild(button)
+       
         
+       
         
         
         
@@ -138,7 +136,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody?.categoryBitMask = middlePlatforms
     }
     
-    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        var button: SKNode! = nil
+            button = SKSpriteNode(color: .red, size: CGSize(width: 100, height: 44))
+            button.position = CGPoint(x:278.561, y: 600.713);
+            self.addChild(button)
+        
+            for touch in touches {
+                let location = touch.location(in: self)
+                if button.contains(location) {
+                    
+                    player.removeFromParent()
+                    player = SKSpriteNode(imageNamed: "gloGuy")
+                    player.position = bottom
+                    player.size = resetSize
+                    player.name = "gloGuy"
+                    player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
+                    player.physicsBody?.mass = 0.684169113636017
+                    self.addChild(player)
+                    label.alpha = 1
+                    middleLeftPlatform.physicsBody?.categoryBitMask = middlePlatforms
+                    middleRightPlatform.physicsBody?.categoryBitMask = middlePlatforms
+                    player.physicsBody?.categoryBitMask = middlePlatforms
+                    
+                }
     
     }
     
@@ -147,3 +168,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
  
 
+    }
+}
