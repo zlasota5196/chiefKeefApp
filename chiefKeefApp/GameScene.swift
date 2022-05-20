@@ -19,7 +19,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var label = SKLabelNode()
     var middleLeftPlatform =  SKSpriteNode()
     var middleRightPlatform = SKSpriteNode()
-    var number = 0
+    var number = 001
     var scoreLabel = SKLabelNode()
  
     
@@ -59,11 +59,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player.physicsBody?.categoryBitMask = middlePlatforms
         
+       
+        
+       
+        
+        
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
-        for touch in touches {
+        for touch in touches{
             player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
             label.alpha = 0
         }
@@ -136,7 +141,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody?.categoryBitMask = middlePlatforms
     }
     
-    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        var button: SKNode! = nil
+            button = SKSpriteNode(color: .red, size: CGSize(width: 100, height: 44))
+            button.position = CGPoint(x:278.561, y: 600.713);
+            self.addChild(button)
+        
+            for touch in touches {
+                let location = touch.location(in: self)
+                if button.contains(location) {
+                    
+                    player.removeFromParent()
+                    player = SKSpriteNode(imageNamed: "gloGuy")
+                    player.position = bottom
+                    player.size = resetSize
+                    player.name = "gloGuy"
+                    player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
+                    player.physicsBody?.mass = 0.684169113636017
+                    self.addChild(player)
+                    label.alpha = 1
+                    middleLeftPlatform.physicsBody?.categoryBitMask = middlePlatforms
+                    middleRightPlatform.physicsBody?.categoryBitMask = middlePlatforms
+                    player.physicsBody?.categoryBitMask = middlePlatforms
+                    
+                }
     
     }
     
@@ -145,3 +173,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
  
 
+    }
+}
