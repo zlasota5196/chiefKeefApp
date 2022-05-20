@@ -21,6 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var middleRightPlatform = SKSpriteNode()
     var number = 001
     var scoreLabel = SKLabelNode()
+ 
     
     let bottom = CGPoint(x: -6.139, y: -566.201)
     let resetSize = CGSize(width: 165.877, height: 149.343)
@@ -57,13 +58,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         middleRightPlatform.physicsBody?.categoryBitMask = middlePlatforms
         
         player.physicsBody?.categoryBitMask = middlePlatforms
-        
-       
-        
-       
-        
-        
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -71,6 +65,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
             label.alpha = 0
         }
+
+    
         
     }
 
@@ -91,6 +87,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.name = "gloGuy"
             player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
             player.physicsBody?.mass = 0.684169113636017
+            player.physicsBody?.categoryBitMask = middlePlatforms
+            player.physicsBody?.contactTestBitMask = 1
             self.addChild(player)
     
             self.ComputerColorChoice = ColorChoices.randomElement()!
@@ -131,6 +129,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.name = "gloGuy"
         player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
         player.physicsBody?.mass = 0.684169113636017
+        player.physicsBody?.categoryBitMask = middlePlatforms
+        player.physicsBody?.contactTestBitMask = 1
         self.addChild(player)
         label.alpha = 1
         middleLeftPlatform.physicsBody?.categoryBitMask = middlePlatforms
@@ -147,7 +147,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             for touch in touches {
                 let location = touch.location(in: self)
                 if button.contains(location) {
-                    
                     player.removeFromParent()
                     player = SKSpriteNode(imageNamed: "gloGuy")
                     player.position = bottom
@@ -155,12 +154,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     player.name = "gloGuy"
                     player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
                     player.physicsBody?.mass = 0.684169113636017
+                    player.physicsBody?.categoryBitMask = middlePlatforms
+                    player.physicsBody?.contactTestBitMask = 1
                     self.addChild(player)
                     label.alpha = 1
-                    middleLeftPlatform.physicsBody?.categoryBitMask = middlePlatforms
-                    middleRightPlatform.physicsBody?.categoryBitMask = middlePlatforms
-                    player.physicsBody?.categoryBitMask = middlePlatforms
-                    
+
                 }
     
     }
