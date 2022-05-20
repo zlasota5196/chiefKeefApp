@@ -150,7 +150,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             for touch in touches {
                 let location = touch.location(in: self)
                 if button.contains(location) {
-                    
                     player.removeFromParent()
                     player = SKSpriteNode(imageNamed: "gloGuy")
                     player.position = bottom
@@ -160,10 +159,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     player.physicsBody?.mass = 0.684169113636017
                     self.addChild(player)
                     label.alpha = 1
-                    middleLeftPlatform.physicsBody?.categoryBitMask = middlePlatforms
-                    middleRightPlatform.physicsBody?.categoryBitMask = middlePlatforms
-                    player.physicsBody?.categoryBitMask = middlePlatforms
-                    
+
                 }
     
     }
