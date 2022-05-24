@@ -81,7 +81,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             label.text = "Tap to Start"
             label.alpha = 1
             number = number + 1
-            if number == 10 {
+            if number % 10 == 0 {
                 label.text = "Bro Go Outside"
                 label.alpha = 1
             }
