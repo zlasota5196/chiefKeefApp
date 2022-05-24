@@ -63,6 +63,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for touch in touches{
             player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
             label.alpha = 0
+            if number == 10 {
+                label.alpha = 1
+            }
         }
 
     
@@ -71,12 +74,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
      
     func didBegin(_ contact: SKPhysicsContact) {
+        
        
         if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "gloGuy" {
             player.removeFromParent()
             label.text = "Tap to Start"
             label.alpha = 1
             number = number + 1
+            if number == 10 {
+                label.text = "Bro Go Outside"
+                label.alpha = 1
+            }
             scoreLabel.text = "\(number)"
             print("touched")
             print(player.position)
@@ -142,7 +150,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         var button: SKNode! = nil
             button = SKSpriteNode(color: .red, size: CGSize(width: 100, height: 44))
-            button.position = CGPoint(x:219.122, y: 595.545);
+            button.position = CGPoint(x:225.316, y: 600.545);
             self.addChild(button)
         
             for touch in touches {
