@@ -64,6 +64,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for touch in touches{
             player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
             label.alpha = 0
+            if number == 10 {
+                label.alpha = 1
+            }
         }
 
     
@@ -72,12 +75,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
      
     func didBegin(_ contact: SKPhysicsContact) {
+        
        
         if contact.bodyA.node?.name == "top" && contact.bodyB.node?.name == "gloGuy" {
             player.removeFromParent()
             label.text = "Tap to Start"
             label.alpha = 1
             number = number + 1
+            if number == 10 {
+                label.text = "Bro Go Outside"
+                label.alpha = 1
+            }
             scoreLabel.text = "\(number)"
             print("touched")
             print(player.position)
