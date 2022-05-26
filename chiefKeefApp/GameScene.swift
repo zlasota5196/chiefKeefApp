@@ -61,7 +61,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches{
-            player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 800.0))
+            var touchPoint = touch.location(in: self)
+            if touchPoint.x >= 0 {
+                player.physicsBody?.applyImpulse(CGVector(dx: 100.0, dy: 800.0))
+            }
+            else if touchPoint.x < 0 {
+                player.physicsBody?.applyImpulse(CGVector(dx: -100.0, dy: 800.0))
+            }
+            
             label.alpha = 0
             if number == 10 {
                 label.alpha = 1
